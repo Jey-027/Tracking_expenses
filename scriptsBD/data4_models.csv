@@ -1,0 +1,20 @@
+﻿Category,Payment Method,Entity,Bank Product
+Banks,Bank Transfer,Cash Money,Cash Money
+Car,Cash money,Itau,Mastercard Aadvantage Platinum
+Clothes,Credit Card,Occidente,Mastercard Credencial
+Contingencies,Debit Card,Scotiabank,Mastercard Gold One Reward
+Donations,PSE,Sodexo,Mastercard Platinum Itau
+Entertainment,Sodexo,,Online payment
+Family,,,Sodexo
+Food,,,Visa Credencial
+Gifts,,,Visa LIfeMiles Platinum
+Health,,,Visa Virtual
+Home,,,
+Mobil Phone,,,
+personal purchases,,,
+Personal Care,,,
+Pets,,,
+Public services,,,
+Public Travel,,,
+studies,,,
+Technology,,,
