@@ -1,0 +1,28 @@
+<html lang="eu">
+<head>
+    <title>Bank products</title>
+</head>
+<body>
+<table>
+    <thead>
+    <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Product Name</th>
+        <th scope="col">Id entity</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for val in bank_product_list %}
+    <tr>
+        <th>{{ val.id }}</th>
+        <td>{{ val.product_name }}</td>
+        <td>{{ val.id_entity }}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+</body>
+
+
+</html>
