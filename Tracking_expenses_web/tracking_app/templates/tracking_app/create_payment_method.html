@@ -1,0 +1,15 @@
+<html lang="eu">
+<head>
+    <title>Create payment method</title>
+</head>
+
+<body>
+<form method="post">
+    <div>
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="create method">
+    </div>
+</form>
+</body>
+</html>

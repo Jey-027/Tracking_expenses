@@ -1,0 +1,18 @@
+<html lang="eu">
+<head>
+    <title>Create categories</title>
+</head>
+
+<body>
+<form method="post">
+    <div>
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Send">
+    </div>
+</form>
+
+</body>
+
+
+</html>
