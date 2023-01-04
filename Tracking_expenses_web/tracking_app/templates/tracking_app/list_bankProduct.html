@@ -1,8 +1,10 @@
-<html lang="eu">
-<head>
-    <title>Bank products</title>
-</head>
-<body>
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Bank product list {% endblock %}
+
+{% block content %}
+
+<h2>Bank products</h2>
 <table>
     <thead>
     <tr>
@@ -12,17 +14,14 @@
     </tr>
     </thead>
     <tbody>
-    {% for val in bank_product_list %}
-    <tr>
-        <th>{{ val.id }}</th>
-        <td>{{ val.product_name }}</td>
-        <td>{{ val.id_entity }}</td>
-    </tr>
-    {% endfor %}
+        {% for val in bank_product_list %}
+        <tr>
+            <th>{{ val.id }}</th>
+            <td>{{ val.product_name }}</td>
+            <td>{{ val.id_entity }}</td>
+        </tr>
+        {% endfor %}
     </tbody>
 </table>
 
-</body>
-
-
-</html>
+{% endblock %}

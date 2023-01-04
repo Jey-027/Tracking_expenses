@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Update Category {% endblock %}
+
+{% block content %}
+
+<h2>Update Categories</h2>
+<form method="post">
+    <div>
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Send update">
+    </div>
+</form>
+
+{% endblock %}

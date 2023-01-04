@@ -25,8 +25,9 @@ class CreateCategory(CreateView):
 
 class UpdateCategory(UpdateView):
     model = Category
-    template_name = ""
+    template_name = "tracking_app/update_category.html"
     fields = ('category_name',)
+    success_url = "/category/list"
 
 
 class EntityList(ListView):
@@ -38,6 +39,13 @@ class EntityList(ListView):
 class CreateEntity(CreateView):
     model = Entity
     template_name = "tracking_app/create_entities.html"
+    fields = ('entity_name',)
+    success_url = "/entity/list"
+
+
+class UpdateEntity(UpdateView):
+    model = Entity
+    template_name = "tracking_app/update_entity.html"
     fields = ('entity_name',)
     success_url = "/entity/list"
 
@@ -55,6 +63,13 @@ class CreateBankProduct(CreateView):
     success_url = "/bank_product/list"
 
 
+class UpdateBankProduct(UpdateView):
+    model = BankProduct
+    template_name = "tracking_app/update_bankproduct.html"
+    fields = ('product_name', 'id_entity',)
+    success_url = "/bank_product/list"
+
+
 class PaymentMethodList(ListView):
     model = PaymentMethod
     context_object_name = "payment_method_list"
@@ -64,5 +79,12 @@ class PaymentMethodList(ListView):
 class CreatePaymentMethod(CreateView):
     model = PaymentMethod
     template_name = "tracking_app/create_payment_method.html"
+    fields = ('method_name',)
+    success_url = "/payment_method/list"
+
+
+class UpdatePaymentMethod(UpdateView):
+    model = PaymentMethod
+    template_name = "tracking_app/update_paymentMethod.html"
     fields = ('method_name',)
     success_url = "/payment_method/list"

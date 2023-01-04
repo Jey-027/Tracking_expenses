@@ -1,9 +1,10 @@
-<html lang="eu">
-<head>
-    <title>Create categories</title>
-</head>
+{% extends 'base.html'%}
+{% load static %}
+{% block title %} Create categories {% endblock %}
 
-<body>
+{% block content %}
+
+<h2>Create categories</h2>
 <form method="post">
     <div>
         {% csrf_token %}
@@ -12,7 +13,4 @@
     </div>
 </form>
 
-</body>
-
-
-</html>
+{% endblock %}

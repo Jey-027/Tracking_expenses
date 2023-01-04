@@ -12,4 +12,8 @@ urlpatterns = [
     path('entity/create', views.CreateEntity.as_view(), name="Create_entity"),
     path('bank_product/create', views.CreateBankProduct.as_view(), name="Create_bankProduct"),
     path('payment_method/create', views.CreatePaymentMethod.as_view(), name="Create_paymentMethod"),
+    path('category/update/<pk>', views.UpdateCategory.as_view(), name="Update_category"),
+    path('entity/update/<pk>', views.UpdateEntity.as_view(), name="Update_entity"),
+    path('bank_product/update/<pk>', views.UpdateBankProduct.as_view(), name="Update_bankProduct"),
+    path('payment_method/update/<pk>', views.UpdatePaymentMethod.as_view(), name="Update_paymentProduct"),
 ]

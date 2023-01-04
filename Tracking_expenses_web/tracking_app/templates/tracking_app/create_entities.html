@@ -1,9 +1,10 @@
-<html lang="eu">
-<head>
-    <title>Create Entities</title>
-</head>
+{% extends 'base.html'%}
+{% load static %}
+{% block title %} Create entities {% endblock %}
 
-<body>
+{% block content %}
+
+<h2>Create Entities</h2>
 <form method="post">
     <div>
         {% csrf_token %}
@@ -11,6 +12,5 @@
         <input type="submit" value="Entity created!!">
     </div>
 </form>
-</body>
 
-</html>
+{% endblock %}

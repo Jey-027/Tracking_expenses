@@ -1,9 +1,10 @@
-<html lang="eu">
-<head>
-    <title>Create payment method</title>
-</head>
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Create payment method {% endblock %}
 
-<body>
+{% block content %}
+
+<h2>Create payment method</h2>
 <form method="post">
     <div>
         {% csrf_token %}
@@ -11,5 +12,5 @@
         <input type="submit" value="create method">
     </div>
 </form>
-</body>
-</html>
+
+{% endblock %}

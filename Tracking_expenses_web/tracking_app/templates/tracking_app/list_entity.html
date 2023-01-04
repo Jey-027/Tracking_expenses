@@ -1,7 +1,10 @@
-<html lang="eu">
-<head>
-    <title>Entities</title>
-</head>
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Entities list {% endblock %}
+
+{% block content %}
+
+<h2>Entities</h2>
 
 <table>
     <thead>
@@ -12,16 +15,13 @@
     </thead>
 
     <tbody>
-    {% for val in entity_list %}
-    <tr>
-        <th>{{ val.id }}</th>
-        <td>{{ val.entity_name }}</td>
-    </tr>
-    {% endfor %}
+        {% for val in entity_list %}
+        <tr>
+            <th>{{ val.id }}</th>
+            <td>{{ val.entity_name }}</td>
+        </tr>
+        {% endfor %}
     </tbody>
 </table>
 
-
-
-
-</html>
+{% endblock %}

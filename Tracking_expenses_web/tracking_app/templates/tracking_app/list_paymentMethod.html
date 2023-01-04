@@ -1,8 +1,10 @@
-<html lang="eu">
-<head>
-    <title>Payment methods</title>
-</head>
-<body>
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Payment methods list {% endblock %}
+
+{% block content %}
+
+<h2>Payment methods</h2>
 <table>
     <thead>
     <tr>
@@ -11,16 +13,13 @@
     </tr>
     </thead>
     <tbody>
-    {% for val in payment_method_list %}
-    <tr>
-        <th>{{ val.id }}</th>
-        <td>{{ val.method_name }}</td>
-    </tr>
-    {% endfor %}
+        {% for val in payment_method_list %}
+        <tr>
+            <th>{{ val.id }}</th>
+            <td>{{ val.method_name }}</td>
+        </tr>
+        {% endfor %}
     </tbody>
 </table>
 
-</body>
-
-
-</html>
+{% endblock %}
