@@ -15,10 +15,3 @@
 </form>
 
 {% endblock %}
-
-
-class MonthlyCheckCreate(CreateView):
-    model = MonthlyCheck
-    template_name = "tracking_app/create_record_mc.html"
-    fields = "__all__"
-    success_url = "/monthly_check/list"

@@ -6,11 +6,11 @@
 
 <h2>Create Entities</h2>
 <form method="post">
-    <div>
-        {% csrf_token %}
-        {{ form.as_p }}
-        <input type="submit" value="Entity created!!">
-    </div>
+  <div>
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Entity created!!">
+  </div>
 </form>
 
 {% endblock %}

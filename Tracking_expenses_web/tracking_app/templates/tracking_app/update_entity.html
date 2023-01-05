@@ -6,11 +6,11 @@
 
 <h2>Update Entities</h2>
 <form method="post">
-    <div>
-        {% csrf_token %}
-        {{ form.as_p }}
-        <input type="submit" value="Send Update">
-    </div>
+  <div>
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Send Update">
+  </div>
 </form>
 
 {% endblock %}

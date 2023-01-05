@@ -6,20 +6,20 @@
 
 <h2>Payment methods</h2>
 <table>
-    <thead>
+  <thead>
     <tr>
-        <th scope="col">Id</th>
-        <th scope="col">Method Name</th>
+      <th scope="col">Id</th>
+      <th scope="col">Method Name</th>
     </tr>
-    </thead>
-    <tbody>
-        {% for val in payment_method_list %}
-        <tr>
-            <th>{{ val.id }}</th>
-            <td>{{ val.method_name }}</td>
-        </tr>
-        {% endfor %}
-    </tbody>
+  </thead>
+  <tbody>
+    {% for val in payment_method_list %}
+    <tr>
+      <th>{{ val.id }}</th>
+      <td>{{ val.method_name }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
 </table>
 
 {% endblock %}

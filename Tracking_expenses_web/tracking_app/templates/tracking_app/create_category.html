@@ -7,11 +7,11 @@
 <h2>Create categories</h2>
 
 <form method="post">
-    <div>
-        {% csrf_token %}
-        {{ form.as_p }}
-        <input type="submit" value="Create category">
-    </div>
+  <div>
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Create category">
+  </div>
 </form>
 
 {% endblock %}
