@@ -53,5 +53,5 @@ class MonthlyCheck(models.Model):
     description = models.CharField(max_length=50)
     id_category = models.ForeignKey(Category, on_delete=models.CASCADE)
 
-    def __str__(self) -> str:
+    def __str__(self):
         return f"{self.id, self.date, self.id_payment_method, self.id_entity, self.id_bank_product, self.amount}"

@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.views.generic import ListView
 from django.views.generic.edit import CreateView, UpdateView
-from .models import Category, Entity, BankProduct, PaymentMethod
+from .models import Category, Entity, BankProduct, PaymentMethod, MonthlyCheck
 
 
 # Create your views here.
@@ -65,7 +65,7 @@ class CreateBankProduct(CreateView):
 
 class UpdateBankProduct(UpdateView):
     model = BankProduct
-    template_name = "tracking_app/update_bankproduct.html"
+    template_name = "tracking_app/update_bankProduct.html"
     fields = ('product_name', 'id_entity',)
     success_url = "/bank_product/list"
 
@@ -88,3 +88,23 @@ class UpdatePaymentMethod(UpdateView):
     template_name = "tracking_app/update_paymentMethod.html"
     fields = ('method_name',)
     success_url = "/payment_method/list"
+
+
+class MonthlyCheckList(ListView):
+    model = MonthlyCheck
+    context_object_name = "monthly_check_list"
+    template_name = "tracking_app/list_monthly_check.html"
+
+
+class MonthlyCheckCreate(CreateView):
+    model = MonthlyCheck
+    template_name = "tracking_app/create_record_mc.html"
+    fields = "__all__"
+    success_url = "/monthly_check/list"
+
+
+class MonthlyCheckUpdate(UpdateView):
+    model = MonthlyCheck
+    template_name = "tracking_app/update_record_mc.html"
+    fields = "__all__"
+    success_url = "/monthly_check/list"

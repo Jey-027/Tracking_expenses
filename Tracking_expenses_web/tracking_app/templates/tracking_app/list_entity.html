@@ -7,21 +7,21 @@
 <h2>Entities</h2>
 
 <table>
-    <thead>
+  <thead>
     <tr>
-        <th scope="col">ID</th>
-        <th scope="col">Entity Name</th>
+      <th scope="col">ID</th>
+      <th scope="col">Entity Name</th>
     </tr>
-    </thead>
+  </thead>
 
-    <tbody>
-        {% for val in entity_list %}
-        <tr>
-            <th>{{ val.id }}</th>
-            <td>{{ val.entity_name }}</td>
-        </tr>
-        {% endfor %}
-    </tbody>
+  <tbody>
+    {% for val in entity_list %}
+    <tr>
+      <th>{{ val.id }}</th>
+      <td>{{ val.entity_name }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
 </table>
 
 {% endblock %}

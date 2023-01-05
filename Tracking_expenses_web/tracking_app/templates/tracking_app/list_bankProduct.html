@@ -6,22 +6,22 @@
 
 <h2>Bank products</h2>
 <table>
-    <thead>
+  <thead>
     <tr>
-        <th scope="col">Id</th>
-        <th scope="col">Product Name</th>
-        <th scope="col">Id entity</th>
+      <th scope="col">Id</th>
+      <th scope="col">Product Name</th>
+      <th scope="col">Id entity</th>
     </tr>
-    </thead>
-    <tbody>
-        {% for val in bank_product_list %}
-        <tr>
-            <th>{{ val.id }}</th>
-            <td>{{ val.product_name }}</td>
-            <td>{{ val.id_entity }}</td>
-        </tr>
-        {% endfor %}
-    </tbody>
+  </thead>
+  <tbody>
+    {% for val in bank_product_list %}
+    <tr>
+      <th>{{ val.id }}</th>
+      <td>{{ val.product_name }}</td>
+      <td>{{ val.id_entity }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
 </table>
 
 {% endblock %}

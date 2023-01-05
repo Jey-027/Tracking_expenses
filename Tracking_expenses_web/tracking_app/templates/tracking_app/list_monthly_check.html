@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} List Monthly Check {% endblock %}
+
+{% block content %}
+
+<h2>Monthly check record</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Date</th>
+      <th scope="col">Amount</th>
+      <th scope="col">Description</th>
+      <th scope="col">Bank_product_id</th>
+      <th scope="col">Category_id</th>
+      <th scope="col">Entity_id</th>
+      <th scope="col">Payment_method_id</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for val in monthly_check_list %}
+    <tr>
+      <th>{{ val.id }}</th>
+      <td>{{ val.date }}</td>
+      <td>{{ val.amount }}</td>
+      <td>{{ val.description }}</td>
+      <th>{{ val.id_bank_product }}</th>
+      <td>{{ val.id_category }}</td>
+      <td>{{ val.id_entity }}</td>
+      <td>{{ val.id_payment_method }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+{% endblock %}

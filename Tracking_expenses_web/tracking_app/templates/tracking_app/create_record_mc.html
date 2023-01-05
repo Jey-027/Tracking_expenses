@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Create record {% endblock %}
+
+{% block content %}
+
+<h2>Create Record</h2>
+
+<form method="post">
+  <div>
+    {% csrf_token %}
+    {{ form.as_P }}
+    <input type="submit" value="Create record">
+  </div>
+</form>
+
+{% endblock %}
+
+
+class MonthlyCheckCreate(CreateView):
+    model = MonthlyCheck
+    template_name = "tracking_app/create_record_mc.html"
+    fields = "__all__"
+    success_url = "/monthly_check/list"

@@ -1,0 +1,17 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block title %} Update record mc {% endblock %}
+
+{% block content %}
+
+<h2>Update record</h2>
+
+<form method="post">
+  <div>
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Update record">
+  </div>
+</form>
+
+{% endblock %}
