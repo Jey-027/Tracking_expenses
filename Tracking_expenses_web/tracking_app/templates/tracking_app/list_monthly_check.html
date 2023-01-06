@@ -30,12 +30,14 @@
     <tr>
       <th scope="col">ID</th>
       <th scope="col">Date</th>
+      <th scope="col">Payment method</th>
+      <th scope="col">Entity</th>
+      <th scope="col">Bank product</th>
       <th scope="col">Amount</th>
       <th scope="col">Description</th>
-      <th scope="col">Bank_product_id</th>
-      <th scope="col">Category_id</th>
-      <th scope="col">Entity_id</th>
-      <th scope="col">Payment_method_id</th>
+      <th scope="col">Category</th>
+
+
     </tr>
   </thead>
   <tbody>
@@ -43,12 +45,14 @@
     <tr>
       <th>{{ val.id }}</th>
       <td>{{ val.date }}</td>
+      <td>{{ val.id_payment_method }}</td>
+      <td>{{ val.id_entity }}</td>
+      <th>{{ val.id_bank_product|stringformat:".2f" }}</th>
       <td>{{ val.amount }}</td>
       <td>{{ val.description }}</td>
-      <th>{{ val.id_bank_product }}</th>
       <td>{{ val.id_category }}</td>
-      <td>{{ val.id_entity }}</td>
-      <td>{{ val.id_payment_method }}</td>
+
+
     </tr>
     {% endfor %}
   </tbody>
