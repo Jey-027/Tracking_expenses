@@ -2,6 +2,8 @@ from django.shortcuts import render
 from django.views.generic import ListView
 from django.views.generic.edit import CreateView, UpdateView
 from .models import Category, Entity, BankProduct, PaymentMethod, MonthlyCheck
+from .forms import *
+from django.db.models import Sum
 
 
 # Create your views here.
@@ -95,11 +97,23 @@ class MonthlyCheckList(ListView):
     context_object_name = "monthly_check_list"
     template_name = "tracking_app/list_monthly_check.html"
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        total_amount = MonthlyCheck.objects.aggregate(total_amount = Sum('amount'))["total_amount"]
+        total_entity = MonthlyCheck.objects.filter(id_entity=1).aggregate(total_entity = Sum('amount'))["total_entity"]
+        total_product = MonthlyCheck.objects.filter(id_bank_product=3).aggregate(total_product = Sum('amount'))["total_product"]
+
+
+        context["TotalAmount"] = total_amount
+        context["TotalEntity"] = total_entity
+        context["TotalProduct"] = total_product
+        return context
+
 
 class MonthlyCheckCreate(CreateView):
     model = MonthlyCheck
     template_name = "tracking_app/create_record_mc.html"
-    fields = "__all__"
+    form_class = MonthlyCheckForm
     success_url = "/monthly_check/list"
 
 
