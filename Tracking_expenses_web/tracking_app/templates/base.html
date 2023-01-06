@@ -1,19 +1,44 @@
-<!-- {% load static %} -->
+{% load static %}
 <!DOCTYPE html>
 <html lang="eu">
 
 <head>
   <meta charset="UTF-8">
   <title>{% block title %} {% endblock %}</title>
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+
+  <!-- style -->
+  <!-- <link href="{% static 'tracking_app/css/style.css' %}" rel="stylesheet"> -->
+
+
 </head>
 
-<body style="background-color:antiquewhite;">
+<body>
   <h1>Financial follow up</h1>
-  <a href="tracking_app/create_bank_product.html">Create finance product</a>
-  <a href="tracking_app/create_category.html">Create category</a>
-  <a href="tracking_app/create_entities.html">Create entity</a>
-  <a href="tracking_app/create_payment_method.html">Create payment method</a>
-  <a href="tracking_app/create_record_mc.html">Create record </a>
+  <div><a href="{% url 'Home' %}"><h5>go home</h5></a></div><br>
+
+  <div class="container-fluid">
+    <h5>LInks create</h5>
+    <a href="{% url 'Create_bankProduct' %}">Create finance product</a>
+    <a href="{% url 'Create_categories' %}">Create category</a>
+    <a href="{% url 'Create_entity' %}">Create entity</a>
+    <a href="{% url 'Create_paymentMethod' %}">Create payment method</a>
+    <a href="{% url 'Create_MonthlyCheck' %}">Create record </a>
+  </div>
+
+  <br>
+
+  <div class="container-fluid">
+    <h5>links Update</h5>
+    <a href="{% url 'Categories' %}">Categories</a>
+    <a href="{% url 'Entities' %}">Entities</a>
+    <a href="{% url 'Bank_Products' %}">Products</a>
+    <a href="{% url 'PaymentMethods' %}">Payment methods</a>
+    <a href="{% url 'MonthlyCheck' %}">Records</a>
+  </div><br>
+  
 
   <!-- Here begins the content that changes -->
   {% block content %}

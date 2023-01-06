@@ -1,0 +1,11 @@
+body {
+    background-color: antiquewhite;
+}
+
+div {
+    height: 250px;
+    background-color: purple;
+    color: white;
+    font-size: 10px;
+    margin: 20px;
+}

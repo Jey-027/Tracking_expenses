@@ -100,13 +100,14 @@ class MonthlyCheckList(ListView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         total_amount = MonthlyCheck.objects.aggregate(total_amount = Sum('amount'))["total_amount"]
-        total_entity = MonthlyCheck.objects.filter(id_entity=1).aggregate(total_entity = Sum('amount'))["total_entity"]
-        total_product = MonthlyCheck.objects.filter(id_bank_product=3).aggregate(total_product = Sum('amount'))["total_product"]
-
+        total_entity = MonthlyCheck.objects.filter(id_payment_method=1).aggregate(total_entity = Sum('amount'))["total_entity"]
+        total_product = MonthlyCheck.objects.filter(id_payment_method=5).aggregate(total_product = Sum('amount'))["total_product"]
+        total_cash = MonthlyCheck.objects.filter(id_payment_method=4).aggregate(total_cash = Sum('amount'))["total_cash"]
 
         context["TotalAmount"] = total_amount
         context["TotalEntity"] = total_entity
         context["TotalProduct"] = total_product
+        context["TotalCash"] = total_cash
         return context
 
 

@@ -13,11 +13,13 @@
         <th>Total Amount</th>
         <th>Total Sodexo</th>
         <th>Total Credit card</th>
+        <th>Total Cash </th>
       </tr>
       <tr>
         <td>{{ TotalAmount|stringformat:".2f" }}</td>
         <td>{{ TotalEntity|stringformat:".2f" }}</td>
         <td>{{ TotalProduct|stringformat:".2f" }}</td>
+        <td>{{ TotalCash|stringformat:".2f" }}</td>
       </tr>
     </table>
   </div>
