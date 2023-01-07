@@ -5,23 +5,27 @@
 {% block content %}
 
 <h2>Bank products</h2>
-<table class="table">
-  <thead>
-    <tr>
-      <th scope="col">Id</th>
-      <th scope="col">Product Name</th>
-      <th scope="col">Id entity</th>
-    </tr>
-  </thead>
-  <tbody>
-    {% for val in bank_product_list %}
-    <tr>
-      <th>{{ val.id }}</th>
-      <td>{{ val.product_name }}</td>
-      <td>{{ val.id_entity }}</td>
-    </tr>
-    {% endfor %}
-  </tbody>
-</table>
-
+<div class="container">
+  <div class="row">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">Product Name</th>
+          <th scope="col">Entity</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for val in bank_product_list %}
+        <tr>
+          <th>{{ val.id }}</th>
+          <td>{{ val.product_name }}</td>
+          <td>{{ val.id_entity }}</td>
+          <td><a href="{% url 'Update_bankProduct' val.id %}" class="button" aria-pressed="true">Edit</a></td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
 {% endblock %}

@@ -11,7 +11,7 @@ class PaymentMethod(models.Model):
     method_name = models.CharField(max_length=20)
 
     def __str__(self):
-        return f"{self.id, self.method_name}"
+        return f"{self.method_name}"
 
 
 # Entity table
@@ -20,7 +20,7 @@ class Entity(models.Model):
     entity_name = models.CharField(max_length=20)
 
     def __str__(self):
-        return f"{self.id, self.entity_name}"
+        return f"{self.entity_name}"
 
 
 # Bank product table
@@ -30,7 +30,7 @@ class BankProduct(models.Model):
     id_entity = models.ForeignKey(Entity, on_delete=models.CASCADE)
 
     def __str__(self):
-        return f"{self.id, self.product_name, self.id_entity}"
+        return f"{self.product_name}"
 
 
 # Category table
@@ -39,7 +39,7 @@ class Category(models.Model):
     category_name = models.CharField(max_length=30)
 
     def __str__(self):
-        return f"{self.id, self.category_name}"
+        return f"{self.category_name}"
 
 
 # Monthly check table
