@@ -10,6 +10,7 @@ asgiref = "*"
 sqlparse = "*"
 pytz = "*"
 psycopg2-binary = "*"
+django-environ = "*"
 
 [dev-packages]
 
