@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Create financial product{% endblock %}
+
+{% block content %}
+
+<h2>Create Financial products</h2>
+
+<form method="post">
+  <div class="row g-3">
+    {% csrf_token %}
+    {{ form.as_p }}
+  </div><br>
+  <button type="submit" class="btn btn-primary">Create product</button>
+</form>
+
+{% endblock %}

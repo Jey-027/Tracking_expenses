@@ -68,8 +68,8 @@ class FinancialProducts(models.Model):
     id_entity = models.ForeignKey(Entity, on_delete=models.CASCADE)
     
     def __str__(self):
-        return f"{self.product_type, self.product_name}"
-
+        return f"{self.product_type} - " + f"{self.id_entity} - " + f"{self.product_name}"
+ 
 class TransactionControl(models.Model):
     id = models.AutoField(primary_key=True)
     date = models.DateField(date)

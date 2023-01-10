@@ -1,9 +1,8 @@
+from django.db.models import Sum
 from django.shortcuts import render
 from django.views.generic import ListView
 from django.views.generic.edit import CreateView, UpdateView
-from .models import *
 from .forms import *
-from django.db.models import Sum
 
 
 # Create your views here.
@@ -136,3 +135,15 @@ class TransactionControlCreate(CreateView):
     template_name = "tracking_app/create_transaction.html"
     form_class = TransactionControlForm
     success_url = "/transaction/list"
+    
+
+class FinancialProductList(ListView):
+    model = FinancialProducts
+    context_object_name = "financialP_list"
+    template_name = "tracking_app/list_financial_product.html"
+
+class FinancialProductCreate(CreateView):
+    model = FinancialProducts
+    template_name = "tracking_app/create_financial_product.html"
+    fields = "__all__"
+    success_url = "/"

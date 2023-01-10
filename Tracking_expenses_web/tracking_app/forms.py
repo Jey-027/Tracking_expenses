@@ -39,4 +39,5 @@ class TransactionControlForm(forms.ModelForm):
             "date": "Date transaction",
             "transaction_value": "Transaction Value",
             "bank_interest": "Bank Interest",
+            "id_financial_product": "Financial product",
         }
