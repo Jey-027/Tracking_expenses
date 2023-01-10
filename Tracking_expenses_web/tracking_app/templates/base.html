@@ -33,7 +33,7 @@
 <!--      <ul class="dropdown-menu">-->
 <!--        <li><a class="dropdown-item" href="{% url 'Categories' %}#">Categories</a></li>-->
 <!--        <li><a class="dropdown-item" href="{% url 'Entities' %}">Entities</a></li>-->
-<!--        <li><a class="dropdown-item" href="{% url 'Bank_Products' %}">Products</a></li>-->
+<!--        <li><a class="dropdown-item" href="{% url 'Products' %}">Products</a></li>-->
 <!--        <li><a class="dropdown-item" href="{% url 'PaymentMethods' %}">Payment methods</a></li>-->
 <!--      </ul>-->
 <!--    </li>-->
@@ -47,7 +47,7 @@
 <!--    <li class="nav-item dropdown">-->
 <!--      <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Create</a>-->
 <!--      <ul class="dropdown-menu">-->
-<!--        <li><a class="dropdown-item" href="{% url 'Create_bankProduct' %}">Create finance product</a></li>-->
+<!--        <li><a class="dropdown-item" href="{% url 'Create_product' %}">Create finance product</a></li>-->
 <!--        <li><a class="dropdown-item" href="{% url 'Create_categories' %}">Create category</a></li>-->
 <!--        <li><a class="dropdown-item" href="{% url 'Create_entity' %}">Create entity</a></li>-->
 <!--        <li><a class="dropdown-item" href="{% url 'Create_paymentMethod' %}">Create payment method</a></li>-->
@@ -56,13 +56,13 @@
 <!--  </ul>-->
   
 <!-- Barra de navegación oscura con menu -->
-  <nav class="navbar navbar-dark bg-primary fixed-top">
+  <nav class="navbar navbar-dark bg-info fixed-top">
   <div class="container-fluid">
     <a class="navbar-brand" href="{% url 'Home' %}">Financial follow up</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="offcanvas offcanvas-end text-bg-primary" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+    <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
       <div class="offcanvas-header">
         <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Menu</h5>
         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -82,7 +82,7 @@
             <ul class="dropdown-menu dropdown-menu-dark">
               <li><a class="dropdown-item" href="{% url 'Categories' %}#">Categories</a></li>
               <li><a class="dropdown-item" href="{% url 'Entities' %}">Entities</a></li>
-              <li><a class="dropdown-item" href="{% url 'Bank_Products' %}">Products</a></li>
+              <li><a class="dropdown-item" href="{% url 'Products' %}">Products</a></li>
               <li><a class="dropdown-item" href="{% url 'PaymentMethods' %}">Payment methods</a></li>
             </ul>
           </li>
@@ -91,7 +91,7 @@
               Create
             </a>
             <ul class="dropdown-menu dropdown-menu-dark">
-              <li><a class="dropdown-item" href="{% url 'Create_bankProduct' %}">Create finance product</a></li>
+              <li><a class="dropdown-item" href="{% url 'Create_product' %}">Create Product</a></li>
               <li><a class="dropdown-item" href="{% url 'Create_categories' %}">Create category</a></li>
               <li><a class="dropdown-item" href="{% url 'Create_entity' %}">Create entity</a></li>
               <li><a class="dropdown-item" href="{% url 'Create_paymentMethod' %}">Create payment method</a></li>
@@ -99,6 +99,15 @@
                 <hr class="dropdown-divider">
               </li>
               <li><a class="dropdown-item" href="{% url 'Create_MonthlyCheck' %}">Create record</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Transaction control
+            </a>
+            <ul class="dropdown-menu dropdown-menu-dark">
+              <li><a class="dropdown-item" href="{% url 'Transaction_control' %}">Transactions</a></li>
+              <li><a class="dropdown-item" href="{% url 'Create_transaction' %}">Create transaction</a></li>
             </ul>
           </li>
         </ul>
@@ -121,8 +130,8 @@
   {% endblock %}
 
 
-  <footer>
-    <div class="container text-center">
+  <footer class="footer text-faded text-center py-5">
+    <div class="container">
       <div class="row">
         <div class="col">
           <i class="bi bi-github"></i>

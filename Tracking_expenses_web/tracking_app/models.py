@@ -24,7 +24,7 @@ class Entity(models.Model):
 
 
 # Bank product table
-class BankProduct(models.Model):
+class Products(models.Model):
     id = models.AutoField(primary_key=True)
     product_name = models.CharField(max_length=30)
     id_entity = models.ForeignKey(Entity, on_delete=models.CASCADE)
@@ -48,10 +48,25 @@ class MonthlyCheck(models.Model):
     date = models.DateField(date)
     id_payment_method = models.ForeignKey(PaymentMethod, on_delete=models.CASCADE)
     id_entity = models.ForeignKey(Entity, on_delete=models.CASCADE)
-    id_bank_product = models.ForeignKey(BankProduct, on_delete=models.CASCADE)
+    id_product = models.ForeignKey(Products, on_delete=models.CASCADE)
     amount = models.DecimalField(max_digits=12, decimal_places=2)
     description = models.CharField(max_length=50)
     id_category = models.ForeignKey(Category, on_delete=models.CASCADE)
 
     def __str__(self):
-        return f"{self.id, self.date, self.id_payment_method, self.id_entity, self.id_bank_product, self.amount}"
+        return f"{self.id, self.date, self.id_payment_method, self.id_entity, self.id_product, self.amount, self.description, self.id_category}"
+
+
+class TransactionControl(models.Model):
+    id = models.AutoField(primary_key=True)
+    date = models.DateField(date)
+    reason = models.CharField(max_length=50)
+    transaction_value = models.DecimalField(max_digits=15, decimal_places=2, default=0, null=True)
+    payment = models.DecimalField(max_digits=15, decimal_places=2, default=0, null=True)
+    bank_interest = models.DecimalField(max_digits=10, decimal_places=2, default=0, null=True)
+    secure = models.DecimalField(max_digits=10, decimal_places=2, default=0, null=True)
+    observation = models.CharField(max_length=100, blank=True, null=True)
+    id_entity = models.ForeignKey(Entity, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return f"{self.date, self.reason ,self.transaction_value, self.payment, self.bank_interest, self.secure, self.observation, self.id_entity}"

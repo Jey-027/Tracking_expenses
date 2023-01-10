@@ -1,10 +1,10 @@
 {% extends 'base.html' %}
 {% load static %}
-{% block title %} Bank product list {% endblock %}
+{% block title %} Products list {% endblock %}
 
 {% block content %}
 
-<h2>Bank products</h2>
+<h2>Products</h2>
 <div class="container">
   <div class="row">
     <table class="table">
@@ -16,12 +16,12 @@
         </tr>
       </thead>
       <tbody>
-        {% for val in bank_product_list %}
+        {% for val in product_list %}
         <tr>
           <th>{{ val.id }}</th>
           <td>{{ val.product_name }}</td>
           <td>{{ val.id_entity }}</td>
-          <td><a href="{% url 'Update_bankProduct' val.id %}" class="button" aria-pressed="true">Edit</a></td>
+          <td><a href="{% url 'Update_product' val.id %}" class="button" aria-pressed="true">Edit</a></td>
         </tr>
         {% endfor %}
       </tbody>

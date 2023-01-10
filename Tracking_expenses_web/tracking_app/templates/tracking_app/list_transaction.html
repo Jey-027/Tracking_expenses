@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Transaction list{% endblock %}
+
+{% block content %}
+
+<h2>Transaction control</h2>
+
+<form method="post">
+  <div class="container">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Date</th>
+          <th scope="col">Reason</th>
+          <th scope="col">Transaction Value</th>
+          <th scope="col">Payment</th>
+          <th scope="col">Bank Interest</th>
+          <th scope="col">Secure</th>
+          <th scope="col">Observation</th>
+          <th scope="col">Entity</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for val in transaction_list %}
+        <tr>
+          <th scope="row">{{ val.id }}</th>
+          <td>{{ val.date }}</td>
+          <td>{{ val.reason }}</td>
+          <td>{{ val.transaction_value }}</td>
+          <td>{{ val.payment }}</td>
+          <td>{{ val.bank_interest }}</td>
+          <td>{{ val.secure }}</td>
+          <td>{{ val.observation }}</td>
+          <td>{{ val.id_entity }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</form>
+
+{% endblock %}

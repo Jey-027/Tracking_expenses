@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.views.generic import ListView
 from django.views.generic.edit import CreateView, UpdateView
-from .models import Category, Entity, BankProduct, PaymentMethod, MonthlyCheck
+from .models import *
 from .forms import *
 from django.db.models import Sum
 
@@ -52,24 +52,24 @@ class UpdateEntity(UpdateView):
     success_url = "/entity/list"
 
 
-class BankProductList(ListView):
-    model = BankProduct
-    context_object_name = "bank_product_list"
-    template_name = "tracking_app/list_bankProduct.html"
+class ProductsList(ListView):
+    model = Products
+    context_object_name = "product_list"
+    template_name = "tracking_app/list_Products.html"
 
 
-class CreateBankProduct(CreateView):
-    model = BankProduct
-    template_name = "tracking_app/create_bank_product.html"
+class CreateProducts(CreateView):
+    model = Products
+    template_name = "tracking_app/create_product.html"
     fields = ('product_name', 'id_entity',)
-    success_url = "/bank_product/list"
+    success_url = "/product/list"
 
 
-class UpdateBankProduct(UpdateView):
-    model = BankProduct
-    template_name = "tracking_app/update_bankProduct.html"
+class UpdateProducts(UpdateView):
+    model = Products
+    template_name = "tracking_app/update_Products.html"
     fields = ('product_name', 'id_entity',)
-    success_url = "/bank_product/list"
+    success_url = "/product/list"
 
 
 class PaymentMethodList(ListView):
@@ -123,3 +123,16 @@ class MonthlyCheckUpdate(UpdateView):
     template_name = "tracking_app/update_record_mc.html"
     fields = "__all__"
     success_url = "/monthly_check/list"
+
+
+class TransactionControlList(ListView):
+    model = TransactionControl
+    context_object_name = "transaction_list"
+    template_name = "tracking_app/list_transaction.html"
+
+
+class TransactionControlCreate(CreateView):
+    model = TransactionControl
+    template_name = "tracking_app/create_transaction.html"
+    form_class = TransactionControlForm
+    success_url = "/transaction/list"
