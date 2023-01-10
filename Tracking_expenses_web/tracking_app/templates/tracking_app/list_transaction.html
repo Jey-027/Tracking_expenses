@@ -41,6 +41,7 @@
           <td>{{ val.secure }}</td>
           <td>{{ val.observation }}</td>
           <td>{{ val.id_financial_product }}</td>
+          <td><a href="{% url 'Update_transaction' val.id %}" class="button" aria-pressed="true">Update</a></td>
         </tr>
         {% endfor %}
       </tbody>

@@ -21,14 +21,14 @@ class CreateCategory(CreateView):
     model = Category
     template_name = "tracking_app/create_category.html"
     fields = ('category_name',)
-    success_url = "/category/list"
+    success_url = "/list/category"
 
 
 class UpdateCategory(UpdateView):
     model = Category
     template_name = "tracking_app/update_category.html"
     fields = ('category_name',)
-    success_url = "/category/list"
+    success_url = "/list/category"
 
 
 class EntityList(ListView):
@@ -41,14 +41,14 @@ class CreateEntity(CreateView):
     model = Entity
     template_name = "tracking_app/create_entities.html"
     fields = ('entity_name',)
-    success_url = "/entity/list"
+    success_url = "/list/entity"
 
 
 class UpdateEntity(UpdateView):
     model = Entity
     template_name = "tracking_app/update_entity.html"
     fields = ('entity_name',)
-    success_url = "/entity/list"
+    success_url = "/list/entity"
 
 
 class ProductsList(ListView):
@@ -61,14 +61,14 @@ class CreateProducts(CreateView):
     model = Products
     template_name = "tracking_app/create_product.html"
     fields = ('product_name', 'id_entity',)
-    success_url = "/product/list"
+    success_url = "/list/product"
 
 
 class UpdateProducts(UpdateView):
     model = Products
     template_name = "tracking_app/update_Products.html"
     fields = ('product_name', 'id_entity',)
-    success_url = "/product/list"
+    success_url = "/list/product"
 
 
 class PaymentMethodList(ListView):
@@ -81,14 +81,14 @@ class CreatePaymentMethod(CreateView):
     model = PaymentMethod
     template_name = "tracking_app/create_payment_method.html"
     fields = ('method_name',)
-    success_url = "/payment_method/list"
+    success_url = "/list/payment_method"
 
 
 class UpdatePaymentMethod(UpdateView):
     model = PaymentMethod
     template_name = "tracking_app/update_paymentMethod.html"
     fields = ('method_name',)
-    success_url = "/payment_method/list"
+    success_url = "/list/payment_method"
 
 
 class MonthlyCheckList(ListView):
@@ -114,14 +114,14 @@ class MonthlyCheckCreate(CreateView):
     model = MonthlyCheck
     template_name = "tracking_app/create_record_mc.html"
     form_class = MonthlyCheckForm
-    success_url = "/monthly_check/list"
+    success_url = "/list/monthly_check"
 
 
 class MonthlyCheckUpdate(UpdateView):
     model = MonthlyCheck
     template_name = "tracking_app/update_record_mc.html"
     fields = "__all__"
-    success_url = "/monthly_check/list"
+    success_url = "/list/monthly_check"
 
 
 class TransactionControlList(ListView):
@@ -134,14 +134,14 @@ class TransactionControlCreate(CreateView):
     model = TransactionControl
     template_name = "tracking_app/create_transaction.html"
     form_class = TransactionControlForm
-    success_url = "/transaction/list"
+    success_url = "/list/transaction"
 
 
 class TransactionControlUpdate(UpdateView):
     model = TransactionControl
     template_name = "tracking_app/update_transaction.html"
     form_class = TransactionControlForm
-    success_url = "/transaction/list"
+    success_url = "/list/transaction"
 
 
 class FinancialProductList(ListView):
@@ -154,11 +154,11 @@ class FinancialProductCreate(CreateView):
     model = FinancialProducts
     template_name = "tracking_app/create_financial_product.html"
     fields = "__all__"
-    success_url = "/financialProduct/list"
+    success_url = "/list/financialProduct"
 
 
 class FinancialProductUpdate(UpdateView):
     model = FinancialProducts
     template_name = "tracking_app/update_fp.html"
     fields = "__all__"
-    success_url = "/financial/list"
+    success_url = "/list/financialProduct"

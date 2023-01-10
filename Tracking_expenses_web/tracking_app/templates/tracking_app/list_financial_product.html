@@ -34,6 +34,7 @@
           <td>{{ val.product_type }}</td>
           <td><a href="{% url 'Transaction_control' %}">{{ val.product_name }}</a></td>
           <td>{{ val.id_entity }}</td>
+          <td><a href="{% url 'Update_fp' val.id %}" class="button" aria-pressed="true">Update</a></td>
         </tr>
         {% endfor %}
         </tbody>
