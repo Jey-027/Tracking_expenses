@@ -1,4 +1,4 @@
-{% load static %}
+<!--{% load static %}-->
 <!DOCTYPE html>
 <html lang="eu">
 
@@ -8,9 +8,9 @@
   <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
   <!-- style -->
-  <!-- <link href="{% static 'tracking/css/style.css' %}" rel="stylesheet"> -->
+<!--   <link href="{% static 'tracking/css/style.css' %}" rel="stylesheet">-->
 
 </head>
 
@@ -23,36 +23,93 @@
     </div>
   </div>
 
-  <ul class="nav nav-tabs text-center ">
-    <li class="nav-item">
-      <a class="nav-link active" aria-current="page" href="{% url 'Home' %}">Home</a>
-    </li>
-    <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">See options</a>
-      <ul class="dropdown-menu">
-        <li><a class="dropdown-item" href="{% url 'Categories' %}#">Categories</a></li>
-        <li><a class="dropdown-item" href="{% url 'Entities' %}">Entities</a></li>
-        <li><a class="dropdown-item" href="{% url 'Bank_Products' %}">Products</a></li>
-        <li><a class="dropdown-item" href="{% url 'PaymentMethods' %}">Payment methods</a></li>
-      </ul>
-    </li>
-    <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Records</a>
-      <ul class="dropdown-menu">
-        <li><a class="dropdown-item" href="{% url 'MonthlyCheck' %}">list of records</a></li>
-        <li><a class="dropdown-item" href="{% url 'Create_MonthlyCheck' %}">Create record</a></li>
-      </ul>
-    </li>
-    <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Create</a>
-      <ul class="dropdown-menu">
-        <li><a class="dropdown-item" href="{% url 'Create_bankProduct' %}">Create finance product</a></li>
-        <li><a class="dropdown-item" href="{% url 'Create_categories' %}">Create category</a></li>
-        <li><a class="dropdown-item" href="{% url 'Create_entity' %}">Create entity</a></li>
-        <li><a class="dropdown-item" href="{% url 'Create_paymentMethod' %}">Create payment method</a></li>
-      </ul>
-    </li>
-  </ul>
+<!-- barra de navigation -->
+<!--  <ul class="nav nav-tabs text-center ">-->
+<!--    <li class="nav-item">-->
+<!--      <a class="nav-link active" aria-current="page" href="{% url 'Home' %}">Home</a>-->
+<!--    </li>-->
+<!--    <li class="nav-item dropdown">-->
+<!--      <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">See options</a>-->
+<!--      <ul class="dropdown-menu">-->
+<!--        <li><a class="dropdown-item" href="{% url 'Categories' %}#">Categories</a></li>-->
+<!--        <li><a class="dropdown-item" href="{% url 'Entities' %}">Entities</a></li>-->
+<!--        <li><a class="dropdown-item" href="{% url 'Bank_Products' %}">Products</a></li>-->
+<!--        <li><a class="dropdown-item" href="{% url 'PaymentMethods' %}">Payment methods</a></li>-->
+<!--      </ul>-->
+<!--    </li>-->
+<!--    <li class="nav-item dropdown">-->
+<!--      <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Records</a>-->
+<!--      <ul class="dropdown-menu">-->
+<!--        <li><a class="dropdown-item" href="{% url 'MonthlyCheck' %}">list of records</a></li>-->
+<!--        <li><a class="dropdown-item" href="{% url 'Create_MonthlyCheck' %}">Create record</a></li>-->
+<!--      </ul>-->
+<!--    </li>-->
+<!--    <li class="nav-item dropdown">-->
+<!--      <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Create</a>-->
+<!--      <ul class="dropdown-menu">-->
+<!--        <li><a class="dropdown-item" href="{% url 'Create_bankProduct' %}">Create finance product</a></li>-->
+<!--        <li><a class="dropdown-item" href="{% url 'Create_categories' %}">Create category</a></li>-->
+<!--        <li><a class="dropdown-item" href="{% url 'Create_entity' %}">Create entity</a></li>-->
+<!--        <li><a class="dropdown-item" href="{% url 'Create_paymentMethod' %}">Create payment method</a></li>-->
+<!--      </ul>-->
+<!--    </li>-->
+<!--  </ul>-->
+  
+<!-- Barra de navegación oscura con menu -->
+  <nav class="navbar navbar-dark bg-primary fixed-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="{% url 'Home' %}">Financial follow up</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="offcanvas offcanvas-end text-bg-primary" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Menu</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{% url 'Home' %}">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'MonthlyCheck' %}">List Records</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              See options
+            </a>
+            <ul class="dropdown-menu dropdown-menu-dark">
+              <li><a class="dropdown-item" href="{% url 'Categories' %}#">Categories</a></li>
+              <li><a class="dropdown-item" href="{% url 'Entities' %}">Entities</a></li>
+              <li><a class="dropdown-item" href="{% url 'Bank_Products' %}">Products</a></li>
+              <li><a class="dropdown-item" href="{% url 'PaymentMethods' %}">Payment methods</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Create
+            </a>
+            <ul class="dropdown-menu dropdown-menu-dark">
+              <li><a class="dropdown-item" href="{% url 'Create_bankProduct' %}">Create finance product</a></li>
+              <li><a class="dropdown-item" href="{% url 'Create_categories' %}">Create category</a></li>
+              <li><a class="dropdown-item" href="{% url 'Create_entity' %}">Create entity</a></li>
+              <li><a class="dropdown-item" href="{% url 'Create_paymentMethod' %}">Create payment method</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="{% url 'Create_MonthlyCheck' %}">Create record</a></li>
+            </ul>
+          </li>
+        </ul>
+        <form class="d-flex mt-3" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-success" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</nav>
 
   <!-- Here begins the content that changes -->
   {% block content %}
@@ -61,13 +118,17 @@
 
 
 
-
   {% endblock %}
+
 
   <footer>
     <div class="container text-center">
       <div class="row">
         <div class="col">
+          <i class="bi bi-github"></i>
+          <i class="bi bi-twitter"></i>
+          <i class="bi bi-discord"></i>
+          <i class="bi bi-youtube"></i>
           <p>Version 1.0 - Project Tracking expenses app </p>
         </div>
       </div>

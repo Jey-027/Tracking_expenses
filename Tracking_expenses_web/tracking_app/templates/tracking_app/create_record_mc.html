@@ -7,13 +7,40 @@
 <h2>Create Record</h2>
 
 <form method="post">
-  <div class="container">
-    <div class="row">
+  <div class="row g-3">
       {% csrf_token %}
       {{ form.as_p }}
-    </div>
-    <input type="submit" value="Create record">
-  </div>
+  </div><br>
+  <button type="submit" class="btn btn-primary">Create record</button>
 </form>
+
+
+<!--<form method="post" class="row g-3">-->
+<!--  {% csrf_token %}-->
+<!--  <div class="col-md-12">-->
+<!--    <label for="inputDate" class="form-label">Date</label>{{ form.date }}-->
+<!--  </div>-->
+<!--  <div class="col-md-4">-->
+<!--    <label for="inputEntity" class="form-label">Payment method</label>{{ form.id_payment_method }}-->
+<!--  </div>-->
+<!--  <div class="col-4">-->
+<!--    <label for="inputAddress" class="form-label">entity</label>{{ form.id_entity }}-->
+<!--  </div>-->
+<!--  <div class="col-4">-->
+<!--    <label for="inputAddress2" class="form-label">Bank product</label>{{ form.id_bank_product }}-->
+<!--  </div>-->
+<!--  <div class="col-md-4">-->
+<!--    <label for="inputCity" class="form-label">Amount</label>{{ form.amount }}-->
+<!--  </div>-->
+<!--  <div class="col-md-4">-->
+<!--    <label for="inputState" class="form-label">Description</label>{{ form.description }}-->
+<!--  </div>-->
+<!--  <div class="col-md-4">-->
+<!--    <label for="inputZip" class="form-label">Category</label>{{ form.id_category }}-->
+<!--  </div>-->
+<!--  <div class="col-12">-->
+<!--    <button type="submit" class="btn btn-primary">Create record</button>-->
+<!--  </div>-->
+<!--</form>-->
 
 {% endblock %}

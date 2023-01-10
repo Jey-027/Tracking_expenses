@@ -7,26 +7,19 @@ class MonthlyCheckForm(forms.ModelForm):
         model = MonthlyCheck
 
         fields = [
-            "id"
-            ,"date"
-            ,"id_payment_method"
-            ,"id_entity"
-            ,"id_bank_product"
-            ,"amount"
-            ,"description"
-            ,"id_category"
+            "id", "date", "id_payment_method", "id_entity", "id_bank_product", "amount", "description", "id_category"
         ]
 
         widgets = {
-            "date" : forms.SelectDateWidget,
+            "date": forms.SelectDateWidget,
         }
 
         labels = {
-            "date" : ("Date"),
-            "id_payment_method" : ("Payment method"),
-            "id_entity" : ("Entity"),
-            "id_bank_product" : ("Bank Product"),
-            "amount" : ("Amount"),
-            "description" : ("Description"),
-            "id_category" : ("Category"),
+            "date": "Date",
+            "id_payment_method": "Payment method",
+            "id_entity": "Entity",
+            "id_bank_product": "Bank Product",
+            "amount": "Amount",
+            "description": "Description".capitalize(),
+            "id_category": "Category",
         }
