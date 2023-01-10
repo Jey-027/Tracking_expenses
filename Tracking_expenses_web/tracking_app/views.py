@@ -135,15 +135,30 @@ class TransactionControlCreate(CreateView):
     template_name = "tracking_app/create_transaction.html"
     form_class = TransactionControlForm
     success_url = "/transaction/list"
-    
+
+
+class TransactionControlUpdate(UpdateView):
+    model = TransactionControl
+    template_name = "tracking_app/update_transaction.html"
+    form_class = TransactionControlForm
+    success_url = "/transaction/list"
+
 
 class FinancialProductList(ListView):
     model = FinancialProducts
     context_object_name = "financialP_list"
     template_name = "tracking_app/list_financial_product.html"
 
+
 class FinancialProductCreate(CreateView):
     model = FinancialProducts
     template_name = "tracking_app/create_financial_product.html"
     fields = "__all__"
-    success_url = "/"
+    success_url = "/financialProduct/list"
+
+
+class FinancialProductUpdate(UpdateView):
+    model = FinancialProducts
+    template_name = "tracking_app/update_fp.html"
+    fields = "__all__"
+    success_url = "/financial/list"

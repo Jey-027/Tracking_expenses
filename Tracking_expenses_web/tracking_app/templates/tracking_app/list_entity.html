@@ -4,7 +4,15 @@
 
 {% block content %}
 
-<h2>Entities</h2>
+<h2 class="text-center">Entities</h2>
+
+<div class="container">
+  <div class="d-grid gap-2">
+    <a href="{% url 'Create_entity' %}" class="btn btn-outline-dark" type="submit">Create Entity</a>
+  </div>
+</div>
+<br>
+
 <div class="container">
   <div class="row">
     <table class="table">

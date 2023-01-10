@@ -4,6 +4,17 @@
 
 {% block content %}
 
+<h2 class="text-center">List of financial products</h2><br>
+
+<!--<nav class="navbar navbar-info bg-dark">-->
+<!--  <a href="{% url 'Create_financialProduct' %}" class="btn btn-outline-success" role="button" aria-pressed="true">+</a>-->
+<!--</nav>-->
+<div class="container">
+  <div class="d-grid gap-2">
+    <a href="{% url 'Create_financialProduct' %}" class="btn btn-outline-success" type="submit">Create product</a>
+  </div>
+</div>
+<br>
 <form method="post">
   <div class="container">
     <div class="column">
@@ -21,7 +32,7 @@
         <tr>
           <th>{{ val.id }}</th>
           <td>{{ val.product_type }}</td>
-          <td>{{ val.product_name }}</td>
+          <td><a href="{% url 'Transaction_control' %}">{{ val.product_name }}</a></td>
           <td>{{ val.id_entity }}</td>
         </tr>
         {% endfor %}
