@@ -28,7 +28,7 @@ class TransactionControlForm(forms.ModelForm):
     class Meta:
         model = TransactionControl
         fields = [
-            "id", "date", "reason", "transaction_value", "payment", "bank_interest", "secure", "observation", "id_entity"
+            "id", "date", "reason", "transaction_value", "payment", "bank_interest", "secure", "observation", "id_financial_product"
         ]
 
         widgets = {
@@ -39,5 +39,4 @@ class TransactionControlForm(forms.ModelForm):
             "date": "Date transaction",
             "transaction_value": "Transaction Value",
             "bank_interest": "Bank Interest",
-            "id_entity": "Entity"
         }
