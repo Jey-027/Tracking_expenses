@@ -82,4 +82,4 @@ class TransactionControl(models.Model):
     id_financial_product = models.ForeignKey(FinancialProducts, on_delete=models.CASCADE)
 
     def __str__(self):
-        return f"{self.date, self.reason ,self.transaction_value, self.payment, self.bank_interest, self.secure, self.observation, self.id_financial_product}"
+        return f"{self.id, self.date, self.reason ,self.transaction_value, self.payment, self.bank_interest, self.secure, self.observation, self.id_financial_product}"
