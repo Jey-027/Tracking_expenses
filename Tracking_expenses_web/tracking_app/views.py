@@ -5,8 +5,6 @@ from django.views.generic.edit import CreateView, UpdateView
 from .forms import *
 
 
-# Create your views here.
-
 def home(request):
     return render(request, "tracking_app/home.html")
 
@@ -122,43 +120,3 @@ class MonthlyCheckUpdate(UpdateView):
     template_name = "tracking_app/update_record_mc.html"
     fields = "__all__"
     success_url = "/list/monthly_check"
-
-
-class TransactionControlList(ListView):
-    model = TransactionControl
-    context_object_name = "transaction_list"
-    template_name = "tracking_app/list_transaction.html"
-
-
-class TransactionControlCreate(CreateView):
-    model = TransactionControl
-    template_name = "tracking_app/create_transaction.html"
-    form_class = TransactionControlForm
-    success_url = "/list/transaction"
-
-
-class TransactionControlUpdate(UpdateView):
-    model = TransactionControl
-    template_name = "tracking_app/update_transaction.html"
-    form_class = TransactionControlForm
-    success_url = "/list/transaction"
-
-
-class FinancialProductList(ListView):
-    model = FinancialProducts
-    context_object_name = "financialP_list"
-    template_name = "tracking_app/list_financial_product.html"
-
-
-class FinancialProductCreate(CreateView):
-    model = FinancialProducts
-    template_name = "tracking_app/create_financial_product.html"
-    fields = "__all__"
-    success_url = "/list/financialProduct"
-
-
-class FinancialProductUpdate(UpdateView):
-    model = FinancialProducts
-    template_name = "tracking_app/update_fp.html"
-    fields = "__all__"
-    success_url = "/list/financialProduct"

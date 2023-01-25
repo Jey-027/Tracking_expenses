@@ -31,7 +31,6 @@
       </thead>
       <tbody>
         {% for val in transaction_list %}
-          {% if val.reason == 'lunch' %}
             <tr>
               <th scope="row">{{ val.id }}</th>
               <td>{{ val.date }}</td>
@@ -44,7 +43,6 @@
               <td>{{ val.id_financial_product }}</td>
               <td><a href="{% url 'Update_transaction' val.id %}" class="button" aria-pressed="true">Update</a></td>
             </tr>
-          {% endif %}
         {% endfor %}
       </tbody>
     </table>
